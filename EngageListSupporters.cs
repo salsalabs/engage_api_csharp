@@ -7,7 +7,7 @@ class ListSupporters
 {
 	static void Main ()
 	{
-		string authTokenToken = "8ouPPe2GmXQDOtD3si7SGDH7MGTiyfSykvKJ6f3JeirmedZqtzxyG1CtBvgJ0gzj3tKLjjPz4t17WCNPcrm5k33XA9ixDuEsuAr_7Gvlpm0-WIxJxtfnl3SHU_SaBfs4DUwQWL7nDC4Ihgp1XKFkEQ";
+		string authTokenToken = "your-incredibly-long-token-here";
 		string hostName = "https://api.salsalabs.org";
 
 		// List supporters since a date.
