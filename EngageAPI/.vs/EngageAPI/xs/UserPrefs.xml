@@ -1,15 +1,15 @@
 ﻿<Properties StartupConfiguration="Multiple Projects">
   <MonoDevelop.Ide.ItemProperties.ListDedications PreferredExecutionTarget="/Applications/Google Chrome.app" />
   <MonoDevelop.Ide.Workbench>
-    <Files>
-      <File FileName="ListSupporters/ListSupporters.cs" Line="76" Column="63" />
-    </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="EngageAPI" expanded="True">
+            <Node name="Solution Items" expanded="True" />
             <Node name="ListDonations" expanded="True" />
-            <Node name="ListSupporters" expanded="True" selected="True" />
+            <Node name="ListSupporters" expanded="True">
+              <Node name="ListSupporters.cs" selected="True" />
+            </Node>
           </Node>
         </State>
       </Pad>
