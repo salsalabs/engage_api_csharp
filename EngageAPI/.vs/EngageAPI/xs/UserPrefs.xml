@@ -1,27 +1,34 @@
-﻿<Properties StartupConfiguration="{9CCEAAEF-84FD-4CD8-821E-09B85D34524D}|Default">
+﻿<Properties StartupConfiguration="Multiple Projects">
+  <MonoDevelop.Ide.ItemProperties.ListDedications PreferredExecutionTarget="/Applications/Google Chrome.app" />
   <MonoDevelop.Ide.Workbench>
     <Files>
-      <File FileName="EngageAPI/ListDedications.cs" Line="91" Column="9" />
-      <File FileName="EngageAPI/Activity.cs" Line="1" Column="1" />
+      <File FileName="ListSupporters/ListSupporters.cs" Line="76" Column="63" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="EngageAPI" expanded="True">
-            <Node name="EngageAPI" expanded="True">
-              <Node name="Dependencies" expanded="True" />
-              <Node name="ListDedications.cs" selected="True" />
-            </Node>
+            <Node name="ListDonations" expanded="True" />
+            <Node name="ListSupporters" expanded="True" selected="True" />
           </Node>
         </State>
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.ItemProperties.ListDonations PreferredExecutionTarget="/Applications/Google Chrome.app" />
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.ItemProperties.EngageAPI PreferredExecutionTarget="/Applications/Google Chrome.app" />
+  <MonoDevelop.Ide.ItemProperties.ListSupporters PreferredExecutionTarget="/Applications/Google Chrome.app" />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MultiItemStartupConfigurations />
+  <MultiItemStartupConfigurations>
+    <MultiItemSolutionRunConfiguration Id="Multiple Projects" Name="Multiple Projects">
+      <Items>
+        <StartupItem ItemId="{DA48805B-D49B-42AB-83E3-628F102ADE1F}" ItemName="ListDedications" ConfigurationId="Default" />
+        <StartupItem ItemId="{8DE643C2-789F-4DA0-B323-A014B96C4B6B}" ItemName="ListDonations" ConfigurationId="Default" />
+        <StartupItem ItemId="{4B1AC537-E9F2-42F1-99E8-F890F94FF926}" ItemName="ListSupporters" ConfigurationId="Default" />
+      </Items>
+    </MultiItemSolutionRunConfiguration>
+  </MultiItemStartupConfigurations>
 </Properties>

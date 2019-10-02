@@ -58,7 +58,7 @@ public class ListDonationApp
 
     }
     //Application starts here...
-    public static void Main2(string[] args)
+    public static void Main(string[] args)
     {
         // Retrieve the Engage token from the environment.
         string authToken = Environment.GetEnvironmentVariable("TOKEN");
@@ -71,8 +71,7 @@ public class ListDonationApp
         // List Activities since a date.
         string operation = "/api/integration/ext/v1/activities/search";
         EngageAPI.Activity.SearchRequest searchRequest = new EngageAPI.Activity.SearchRequest();
-        //searchRequest.modifiedFrom = "2016-05-26T11:49:24.905Z";
-        searchRequest.activityIds = new string[] { "d9f2d14f-d37e-4091-a4a6-d68c3c613cac" };
+        searchRequest.modifiedFrom = "2015-10-01T00:00:00.00Z";
         searchRequest.offset = 0;
         // TODO: fetch this count from a Metrics object.
         searchRequest.count = 20;
