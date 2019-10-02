@@ -1,17 +1,19 @@
 ﻿<Properties StartupConfiguration="{9CCEAAEF-84FD-4CD8-821E-09B85D34524D}|Default">
   <MonoDevelop.Ide.Workbench>
+    <Files>
+      <File FileName="EngageAPI/ListDedications.cs" Line="91" Column="9" />
+      <File FileName="EngageAPI/Activity.cs" Line="1" Column="1" />
+    </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="EngageAPI" expanded="True">
-            <Node name="EngageAPI" expanded="True" selected="True">
+            <Node name="EngageAPI" expanded="True">
               <Node name="Dependencies" expanded="True" />
+              <Node name="ListDedications.cs" selected="True" />
             </Node>
           </Node>
         </State>
-      </Pad>
-      <Pad Id="MonoDevelop.Debugger.WatchPad">
-        <State />
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>

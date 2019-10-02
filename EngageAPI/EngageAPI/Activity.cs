@@ -26,6 +26,7 @@ namespace EngageAPI
         {
             public string modifiedFrom;
             public string modifiedTo;
+            public string[] activityIds;
             public int offset;
             public int count;
             public string type;

@@ -23,9 +23,9 @@ public class ListDedicationApp
         EngageAPI.Activity.SearchResultsPayload p = searchResult.payload;
         foreach (EngageAPI.Activity.Activity s in p.activities)
         {
-            if (s.designation != null)
+            if (s.dedication != null)
             {
-                count++;
+                count += 1;
             }
         }
         if (count > 0)
@@ -88,7 +88,9 @@ public class ListDedicationApp
         // List Activities since a date.
         string operation = "/api/integration/ext/v1/activities/search";
         EngageAPI.Activity.SearchRequest searchRequest = new EngageAPI.Activity.SearchRequest();
-        searchRequest.modifiedFrom = "2016-05-26T11:49:24.905Z";
+        searchRequest.modifiedFrom = "2019-09-01T00:00:00.060Z";
+        searchRequest.modifiedTo = "2019-10-31T00:00:00.060Z";
+        //searchRequest.activityIds = new string[] { "d9f2d14f-d37e-4091-a4a6-d68c3c613cac" };
         searchRequest.offset = 0;
         // TODO: fetch this count from a Metrics object.
         searchRequest.count = 20;
@@ -114,5 +116,6 @@ public class ListDedicationApp
                 searchRequest.offset += searchRequest.count;
             }
         } while (searchRequest.count != 0);
+        Console.WriteLine("Done");
     }
 }
