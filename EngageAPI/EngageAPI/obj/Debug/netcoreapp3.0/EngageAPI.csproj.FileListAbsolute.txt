@@ -7,13 +7,14 @@
 /Users/aleonard/Projects/engage_api_csharp/EngageAPI/EngageAPI/bin/Debug/netcoreapp3.0/EngageAPI.runtimeconfig.dev.json
 /Users/aleonard/Projects/engage_api_csharp/EngageAPI/EngageAPI/bin/Debug/netcoreapp3.0/EngageAPI.dll
 /Users/aleonard/Projects/engage_api_csharp/EngageAPI/EngageAPI/bin/Debug/netcoreapp3.0/EngageAPI.pdb
-/Users/aleonard/Projects/engage_api_csharp/EngageAPI/EngageAPI/bin/Debug/netcoreapp3.0/Newtonsoft.Json.dll
 /Users/aleonard/Projects/engage_api_csharp/EngageAPI/EngageAPI/obj/Debug/netcoreapp3.0/staticwebassets/EngageAPI.StaticWebAssets.Manifest.cache
 /Users/aleonard/Projects/engage_api_csharp/EngageAPI/EngageAPI/obj/Debug/netcoreapp3.0/staticwebassets/EngageAPI.StaticWebAssets.xml
 /Users/aleonard/Projects/engage_api_csharp/EngageAPI/EngageAPI/obj/Debug/netcoreapp3.0/EngageAPI.MvcApplicationPartsAssemblyInfo.cache
 /Users/aleonard/Projects/engage_api_csharp/EngageAPI/EngageAPI/obj/Debug/netcoreapp3.0/EngageAPI.AssemblyInfoInputs.cache
 /Users/aleonard/Projects/engage_api_csharp/EngageAPI/EngageAPI/obj/Debug/netcoreapp3.0/EngageAPI.AssemblyInfo.cs
 /Users/aleonard/Projects/engage_api_csharp/EngageAPI/EngageAPI/obj/Debug/netcoreapp3.0/EngageAPI.RazorTargetAssemblyInfo.cache
-/Users/aleonard/Projects/engage_api_csharp/EngageAPI/EngageAPI/obj/Debug/netcoreapp3.0/EngageAPI.csproj.CopyComplete
 /Users/aleonard/Projects/engage_api_csharp/EngageAPI/EngageAPI/obj/Debug/netcoreapp3.0/EngageAPI.dll
 /Users/aleonard/Projects/engage_api_csharp/EngageAPI/EngageAPI/obj/Debug/netcoreapp3.0/EngageAPI.pdb
+/Users/aleonard/Projects/engage_api_csharp/EngageAPI/EngageAPI/obj/Debug/netcoreapp3.0/EngageAPI.csprojAssemblyReference.cache
+/Users/aleonard/Projects/engage_api_csharp/EngageAPI/EngageAPI/bin/Debug/netcoreapp3.0/Newtonsoft.Json.dll
+/Users/aleonard/Projects/engage_api_csharp/EngageAPI/EngageAPI/obj/Debug/netcoreapp3.0/EngageAPI.csproj.CopyComplete

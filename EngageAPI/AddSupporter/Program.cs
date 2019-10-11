@@ -1,5 +1,13 @@
-//One-off program to read all supporters.  Contains all of the necessary
-//data definitions).
+//One-off program to add a supporter to Engage.  You provide the API token
+//in an environment variable named "TOKEN".  You provide first name, last name
+//email in the static strings.
+//
+//There are two possible outcomes.  The first is that the supporter is added
+//to Engage.  That's a success indication.  The second is that the supporter
+//already exists in Engage.  That's a found indication.  Note that a found
+//supporter will have first and last name updated by the API call.
+//See:
+//https://help.salsalabs.com/hc/en-us/articles/224470107-Engage-API-Supporter-Data#adding-updating-and-deleting-supporters
 
 using System;
 using System.Net;
@@ -10,6 +18,9 @@ using Newtonsoft.Json;
 public class ListSupporterApp
 {
     public static string hostName = "https://api.salsalabs.org";
+    public static string firstName = "Mergatroyd";
+    public static string lastName = "Bzramlik";
+    public static string email = "mergatroyd@bzramlik.biz";
 
     public ListSupporterApp()
     {

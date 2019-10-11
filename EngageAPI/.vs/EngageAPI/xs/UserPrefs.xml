@@ -1,34 +1,21 @@
-﻿<Properties StartupConfiguration="Multiple Projects">
-  <MonoDevelop.Ide.ItemProperties.ListDedications PreferredExecutionTarget="/Applications/Google Chrome.app" />
+﻿<Properties StartupConfiguration="{B1D091B6-BAB3-4CB2-9869-F5219190631C}|Default">
   <MonoDevelop.Ide.Workbench>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
-          <Node name="EngageAPI" expanded="True">
-            <Node name="Solution Items" expanded="True" />
-            <Node name="ListDonations" expanded="True" />
-            <Node name="ListSupporters" expanded="True">
-              <Node name="ListSupporters.cs" selected="True" />
-            </Node>
+          <Node name="EngageAPI" expanded="True" selected="True">
+            <Node name="AddSupporter" expanded="True" />
           </Node>
         </State>
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.ItemProperties.ListDonations PreferredExecutionTarget="/Applications/Google Chrome.app" />
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.ItemProperties.ListSupporters PreferredExecutionTarget="/Applications/Google Chrome.app" />
+  <MonoDevelop.Ide.ItemProperties.EngageAPI PreferredExecutionTarget="/Applications/Google Chrome.app" />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MultiItemStartupConfigurations>
-    <MultiItemSolutionRunConfiguration Id="Multiple Projects" Name="Multiple Projects">
-      <Items>
-        <StartupItem ItemId="{DA48805B-D49B-42AB-83E3-628F102ADE1F}" ItemName="ListDedications" ConfigurationId="Default" />
-        <StartupItem ItemId="{8DE643C2-789F-4DA0-B323-A014B96C4B6B}" ItemName="ListDonations" ConfigurationId="Default" />
-        <StartupItem ItemId="{4B1AC537-E9F2-42F1-99E8-F890F94FF926}" ItemName="ListSupporters" ConfigurationId="Default" />
-      </Items>
-    </MultiItemSolutionRunConfiguration>
-  </MultiItemStartupConfigurations>
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.ItemProperties.AddSupporter FirstBuild="True" />
 </Properties>

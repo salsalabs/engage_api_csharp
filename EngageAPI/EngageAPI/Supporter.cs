@@ -3,6 +3,16 @@ namespace EngageAPI
 {
     namespace Supporter
     {
+        //Constants for searching, adding and removing supporters.
+        public static class Constants
+        {
+            public const string SearchEndpoint = "/api/integration/ext/v1/supporters/search";
+            public const string AddEndpoint = "/api/integration/ext/v1/supporters";
+            public const string UpdateEndpoint = AddEndpoint;
+            public const string UpsertEndpoint = AddEndpoint;
+            public const string DeleteEndpoint = AddEndpoint;
+        }
+
         //A contact for a supporter.
         public struct Contact
         {
@@ -67,7 +77,8 @@ namespace EngageAPI
             public Supporter[] supporters;
 
         }
-        //Request requests a search for s.  Barebones for now.  
+        //Request requests a search for supporters modified between
+        //'modifiedFrom' and 'modifiedTo'.
         //Add variations later.
         public struct SearchRequest
         {
@@ -83,13 +94,17 @@ namespace EngageAPI
             public SearchRequest payload;
         }
 
-        // Results returned by searching for s.
+        // Wrapper around list of returned Supporters.
         public struct SearchResults
         {
             public string ID;
             public string timestamp;
             public SearchResultsPayload payload;
         }
+
+        //Upsert (add/mmodify) request.
+
+     
 
     }
 }

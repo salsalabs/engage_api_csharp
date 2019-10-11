@@ -3,8 +3,11 @@ namespace EngageAPI
 {
     namespace Activity
     {
-        static class Constants
+        //Constants for searching, adding and removing activities.
+        public static class Constants
         {
+            public const string SearchEndpoint = "/api/integration/ext/v1/activities/search";
+
             public const string SubscriptionManagement = "SUBSCRIPTION_MANAGEMENT";
             public const string Subscribe = "SUBSCRIBE";
             public const string Fundraise = "FUNDRAISE";

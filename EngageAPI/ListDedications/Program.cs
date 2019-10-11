@@ -1,15 +1,12 @@
 //One-off program to read all Activities.  Contains all of the necessary
 //data definitions).
-
 using System;
 using System.Net;
 using Newtonsoft.Json;
 
-
 // Class containing the executable.
 public class ListDedicationApp
 {
-    public static string hostName = "https://api.salsalabs.org";
     public ListDedicationApp()
     {
     }
@@ -86,7 +83,6 @@ public class ListDedicationApp
         }
 
         // List Activities since a date.
-        string operation = "/api/integration/ext/v1/activities/search";
         EngageAPI.Activity.SearchRequest searchRequest = new EngageAPI.Activity.SearchRequest();
         searchRequest.modifiedFrom = "2019-09-01T00:00:00.060Z";
         searchRequest.modifiedTo = "2019-10-31T00:00:00.060Z";
@@ -95,7 +91,7 @@ public class ListDedicationApp
         // TODO: fetch this count from a Metrics object.
         searchRequest.count = 20;
         searchRequest.type = EngageAPI.Activity.Constants.Fundraise;
-        var url = hostName + operation;
+        var url = EngageAPI.Constants.APIHost + EngageAPI.Activity.Constants.SearchEndpoint;
         ListDedicationApp app = new ListDedicationApp();
         do
         {
@@ -109,7 +105,7 @@ public class ListDedicationApp
                 requestPayload.payload = searchRequest;
                 string payload = JsonConvert.SerializeObject(requestPayload);
                 //Console.WriteLine("request payload is     {0}", payload);
-                string s = client.UploadString(url, "POST", payload);
+                string s = client.UploadString(url, EngageAPI.Constants.SearchMethod, payload);
                 EngageAPI.Activity.SearchResults results = JsonConvert.DeserializeObject<EngageAPI.Activity.SearchResults>(s);
                 app.ShowResults(results);
                 searchRequest.count = results.payload.activities.Length;
