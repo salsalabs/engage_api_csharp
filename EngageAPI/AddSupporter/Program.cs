@@ -15,30 +15,24 @@ using Newtonsoft.Json;
 
 
 // Class containing the executable.
-public class ListSupporterApp
+public class AddSupporterApp
 {
-    public static string hostName = "https://api.salsalabs.org";
     public static string firstName = "Mergatroyd";
     public static string lastName = "Bzramlik";
-    public static string email = "mergatroyd@bzramlik.biz";
+    public static string email = "mergatroyd@cnn.com";
 
-    public ListSupporterApp()
+    public AddSupporterApp()
     {
     }
 
     //Display the search results on the console.
-    public void ShowResults(EngageAPI.Supporter.SearchResults searchResult)
+    public void ShowResults(EngageAPI.Supporter.UpsertResponse results)
     {
         Console.WriteLine("\n----------------- Results -----------------");
-        Console.WriteLine("ID:           {0}", searchResult.ID);
-        Console.WriteLine("Timestamp:    {0}", searchResult.timestamp);
+        Console.WriteLine("ID:           {0}", results.id);
+        Console.WriteLine("Timestamp:    {0}", results.timeStamp);
         Console.WriteLine("\n----------------- Payload -----------------");
-        EngageAPI.Supporter.SearchResultsPayload p = searchResult.payload;
-        Console.WriteLine("Total:        {0}", p.total);
-        Console.WriteLine("Offset:       {0}", p.offset);
-        Console.WriteLine("Supporters:   {0}", p.supporters.Length);
-        Console.WriteLine("\n----------------- Supporters -----------------");
-        Console.WriteLine("There are {0} supporters in this read.", p.supporters.Length);
+        EngageAPI.Supporter.UpsertResponsePayload p = results.payload;
         foreach (EngageAPI.Supporter.Supporter s in p.supporters)
         {
             Console.WriteLine("Result:       {0}", s.result);
@@ -55,7 +49,7 @@ public class ListSupporterApp
                     Console.WriteLine("Contact:      {0} {1}", c.type, c.value);
                 }
             }
-            if (s.customFieldValues.Length != 0)
+            if (s.customFieldValues!= null && s.customFieldValues.Length != 0)
             {
                 foreach (EngageAPI.Supporter.CustomFieldValue c in s.customFieldValues)
                 {
@@ -64,10 +58,6 @@ public class ListSupporterApp
                         Console.WriteLine("CustomField: {0} = {1}", c.name, c.value);
                     }
                 }
-            }
-            if (s.dedication != null)
-            {
-                Console.WriteLine("Dedication:   {0}", s.dedication);
             }
             Console.WriteLine();
         }
@@ -83,34 +73,49 @@ public class ListSupporterApp
             Console.WriteLine("Error:  The environment variable TOKEN must contain your Engage API token.");
             Environment.Exit(0);
         }
-        // List supporters since a date.
-        string operation = "/api/integration/ext/v1/supporters/search";
-        EngageAPI.Supporter.SearchRequest searchRequest = new EngageAPI.Supporter.SearchRequest();
-        searchRequest.modifiedFrom = "2016-05-26T11:49:24.905Z";
-        searchRequest.offset = 0;
-        // TODO: fetch this count from a Metrics object.
-        searchRequest.count = 20;
-        var url = ListSupporterApp.hostName + operation;
-        ListSupporterApp app = new ListSupporterApp();
-        do
+        string host = Environment.GetEnvironmentVariable("HOST");
+        if (host == null)
         {
-            using (var client = new WebClient())
-            {
-                client.Headers[HttpRequestHeader.ContentType] = "application/json";
-                client.Headers["authToken"] = authToken;
-                Console.WriteLine("\n----------------- Read from {0} -----------------", searchRequest.offset);
+            host = EngageAPI.Constants.APIHost;
+        }
 
-                EngageAPI.Supporter.SearchRequestPayload requestPayload = new EngageAPI.Supporter.SearchRequestPayload();
-                requestPayload.payload = searchRequest;
-                string payload = JsonConvert.SerializeObject(requestPayload);
-                Console.WriteLine("request payload is {0}", payload);
-                string s = client.UploadString(url, "POST", payload);
-                Console.WriteLine("Response:\n{0}\n", s);
-                EngageAPI.Supporter.SearchResults results = JsonConvert.DeserializeObject<EngageAPI.Supporter.SearchResults>(s);
-                app.ShowResults(results);
-                searchRequest.count = results.payload.supporters.Length;
-                searchRequest.offset += searchRequest.count;
-            }
-        } while (searchRequest.count != 0);
+        //Add a supporter record using the static variables.
+        EngageAPI.Supporter.Supporter supporter = new EngageAPI.Supporter.Supporter();
+        supporter.firstName = firstName;
+        supporter.lastName = lastName;
+
+        EngageAPI.Supporter.Contact contact = new EngageAPI.Supporter.Contact();
+        contact.type = EngageAPI.Supporter.Constants.Email;
+        contact.value = email;
+        contact.status = EngageAPI.Supporter.Constants.OptIn;
+        supporter.contacts = new EngageAPI.Supporter.Contact[1];
+        supporter.contacts[0] = contact;
+
+        //supporter.address = new EngageAPI.Supporter.Address();
+        //supporter.customFieldValues = new EngageAPI.Supporter.CustomFieldValue[0];
+
+        EngageAPI.Supporter.UpsertRequest request = new EngageAPI.Supporter.UpsertRequest();
+        request.payload = new EngageAPI.Supporter.UpsertRequestPayload();
+        request.payload.supporters = new EngageAPI.Supporter.Supporter[1];
+        request.payload.supporters[0] = supporter;
+
+        var url = host + EngageAPI.Supporter.Constants.UpsertEndpoint;
+        Console.WriteLine("url is {0}", url);
+        AddSupporterApp app = new AddSupporterApp();
+        using (var client = new WebClient())
+        {
+            client.Headers[HttpRequestHeader.ContentType] = "application/json";
+            client.Headers["authToken"] = authToken;
+
+            JsonSerializerSettings settings = new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore };
+            string payload = JsonConvert.SerializeObject(request, Formatting.None, settings);
+            Console.WriteLine("request is {0}", payload);
+            Console.WriteLine("method is {0}", EngageAPI.Constants.UpsertMethod);
+            string s = client.UploadString(url, EngageAPI.Constants.UpsertMethod, payload);
+            Console.WriteLine("Response:\n{0}\n", s);
+
+            EngageAPI.Supporter.UpsertResponse results = JsonConvert.DeserializeObject<EngageAPI.Supporter.UpsertResponse>(s, settings);
+            app.ShowResults(results);
+        }
     }
 }

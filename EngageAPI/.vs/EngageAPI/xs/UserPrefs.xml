@@ -1,10 +1,15 @@
 ﻿<Properties StartupConfiguration="{B1D091B6-BAB3-4CB2-9869-F5219190631C}|Default">
-  <MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workbench ActiveDocument="AddSupporter/Program.cs">
+    <Files>
+      <File FileName="AddSupporter/Program.cs" Line="52" Column="46" />
+      <File FileName="EngageAPI/Supporter.cs" Line="56" Column="1" />
+    </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="EngageAPI" expanded="True" selected="True">
             <Node name="AddSupporter" expanded="True" />
+            <Node name="EngageAPI" expanded="True" />
           </Node>
         </State>
       </Pad>
@@ -13,9 +18,9 @@
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.ItemProperties.EngageAPI PreferredExecutionTarget="/Applications/Google Chrome.app" />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <Debugger.DebugSourceFolders />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MultiItemStartupConfigurations />
-  <MonoDevelop.Ide.ItemProperties.AddSupporter FirstBuild="True" />
 </Properties>

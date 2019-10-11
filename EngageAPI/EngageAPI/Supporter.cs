@@ -11,10 +11,19 @@ namespace EngageAPI
             public const string UpdateEndpoint = AddEndpoint;
             public const string UpsertEndpoint = AddEndpoint;
             public const string DeleteEndpoint = AddEndpoint;
+            public const string Email = "EMAIL";
+            public const string HomePhone = "HOME_PHONE";
+            public const string CellPhone = "CELL_PHONE";
+            public const string WorkPhone = "WORK_PHONE";
+            public const string FaceBookID = "FACEBOOK_ID";
+            public const string TwitterID = "TWITTER_ID";
+            public const string LinkedInID = "LINKEDIN_ID";
+            public const string OptIn = "OPT_IN";
+            public const string OptIut = "OPT_OUT";
+            public const string HardBounce = "HARD_BOUNCE";
         }
-
-        //A contact for a supporter.
-        public struct Contact
+            //A contact for a supporter.
+            public struct Contact
         {
             public string type;
             public string value;
@@ -58,7 +67,7 @@ namespace EngageAPI
         public struct Supporter
         {
             public string readOnly;
-            public string Id;
+            public string SupporterId;
             public string firstName;
             public string lastName;
             public string createdDate;
@@ -66,7 +75,6 @@ namespace EngageAPI
             public Address address;
             public Contact[] contacts;
             public CustomFieldValue[] customFieldValues;
-            public object dedication;
             public string result;
         }
         //Payload returned by searching for s.
@@ -97,14 +105,38 @@ namespace EngageAPI
         // Wrapper around list of returned Supporters.
         public struct SearchResults
         {
-            public string ID;
+            public string id;
             public string timestamp;
             public SearchResultsPayload payload;
         }
 
-        //Upsert (add/mmodify) request.
+        //Upsert (add/modify) request.  Engage uses the same call sequence
+        //for both add and modify.  Having an upsert will reduce confustion.
+        public struct UpsertRequest
+        {
+            public UpsertRequestPayload payload;
+        }
 
-     
+        //Upsert payload.  Contains the list of supporters to add/modify.
+        public struct UpsertRequestPayload
+        {
+            public Supporter[] supporters;
+        }
+
+        //Upsert response.  
+        public struct UpsertResponse
+        {
+            public string id;
+            public string timeStamp;
+            public UpsertResponsePayload payload;
+        }
+
+        //Upsert response payload.  Wraps around a list of added/modified
+        //supporters.
+        public struct UpsertResponsePayload
+        {
+            public Supporter[] supporters;
+        }
 
     }
 }

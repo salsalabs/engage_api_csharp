@@ -12,4 +12,11 @@ namespace EngageAPI
         public const string UpsertMethod = AddMethod;
         public const string DeleteMethod = "DELETE";
     }
+
+    //Common response header.
+    public struct ResponseHeader
+    {
+        public int ProcessingTime;
+        public string ServerID;
+    }
 }

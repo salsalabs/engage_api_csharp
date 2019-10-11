@@ -14,7 +14,7 @@
         "outputPath": "/Users/aleonard/Projects/engage_api_csharp/EngageAPI/EngageAPI/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/aleonard/.config/NuGet/NuGet.Config"
+          "/Users/aleonard/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.0"
