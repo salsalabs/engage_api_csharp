@@ -6,7 +6,11 @@
 
   <PropertyGroup Condition=" '$(RunConfiguration)' == 'Custom' ">
     <StartAction>Project</StartAction>
-    <ApplicationURL>https://localhost:5001;http://localhost:5000</ApplicationURL>
+    <EnvironmentVariables>
+      <Variable name="Token" value="VQexhhrG_7seUusAQ1aaHblMEAOYfLsy-nwXH-7RhF2PZshoS_RcsRtLCGLv4hJ13uNVAyYPqkYOkL6-8l3-9fFIBj5qGZER85TV3j7-PY6rh633tso7j4IfcAqTBPqoneAy4pn7kO5HMWrUOPiE0A" />
+      <Variable name="ASPNETCORE_ENVIRONMENT" value="Development" />
+    </EnvironmentVariables>
+    <ApplicationURL>http://localhost:5000</ApplicationURL>
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="12.0.2" />

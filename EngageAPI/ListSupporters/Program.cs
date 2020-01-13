@@ -14,11 +14,21 @@ public class ListSupporterApp
     {
     }
 
+    // Just show the total, offset and count.
+    public void SummarizeResults(EngageAPI.Supporter.SearchResults searchResult)
+    {
+        EngageAPI.Supporter.SearchResultsPayload p = searchResult.payload;
+        Console.WriteLine("response is {{payload : {{ total: {0}, offset: {1}, supporters: {2} }} }}\n",
+            p.total,
+            p.offset,
+            p.supporters.Length);
+    }
+
     //Display the search results on the console.
     public void ShowResults(EngageAPI.Supporter.SearchResults searchResult)
     {
         Console.WriteLine("\n----------------- Results -----------------");
-        Console.WriteLine("ID:           {0}", searchResult.ID);
+        Console.WriteLine("ID:           {0}", searchResult.id);
         Console.WriteLine("Timestamp:    {0}", searchResult.timestamp);
         Console.WriteLine("\n----------------- Payload -----------------");
         EngageAPI.Supporter.SearchResultsPayload p = searchResult.payload;
@@ -53,10 +63,6 @@ public class ListSupporterApp
                     }
                 }
             }
-            if (s.dedication != null)
-            {
-                Console.WriteLine("Dedication:   {0}", s.dedication);
-            }
             Console.WriteLine();
         }
 
@@ -73,7 +79,7 @@ public class ListSupporterApp
         }
         // List supporters since a date.
         EngageAPI.Supporter.SearchRequest searchRequest = new EngageAPI.Supporter.SearchRequest();
-        searchRequest.modifiedFrom = "2016-05-26T11:49:24.905Z";
+        searchRequest.modifiedFrom = "2019-01-07T12:00:00.000Z";
         searchRequest.offset = 0;
         // TODO: fetch this count from a Metrics object.
         searchRequest.count = 20;
@@ -85,16 +91,17 @@ public class ListSupporterApp
             {
                 client.Headers[HttpRequestHeader.ContentType] = "application/json";
                 client.Headers["authToken"] = authToken;
-                Console.WriteLine("\n----------------- Read from {0} -----------------", searchRequest.offset);
+                //Console.WriteLine("\n----------------- Read from {0} -----------------", searchRequest.offset);
 
                 EngageAPI.Supporter.SearchRequestPayload requestPayload = new EngageAPI.Supporter.SearchRequestPayload();
                 requestPayload.payload = searchRequest;
                 string payload = JsonConvert.SerializeObject(requestPayload);
                 Console.WriteLine("request payload is {0}", payload);
                 string s = client.UploadString(url, EngageAPI.Constants.SearchMethod, payload);
-                Console.WriteLine("Response:\n{0}\n", s);
+                //Console.WriteLine("Response:\n{0}\n", s);
                 EngageAPI.Supporter.SearchResults results = JsonConvert.DeserializeObject<EngageAPI.Supporter.SearchResults>(s);
-                app.ShowResults(results);
+                //app.ShowResults(results);
+                app.SummarizeResults(results);
                 searchRequest.count = results.payload.supporters.Length;
                 searchRequest.offset += searchRequest.count;
             }
