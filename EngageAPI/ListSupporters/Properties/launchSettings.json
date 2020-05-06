@@ -4,10 +4,9 @@
       "commandName": "Project",
       "launchBrowser": true,
       "environmentVariables": {
-        "Token": "VQexhhrG_7seUusAQ1aaHblMEAOYfLsy-nwXH-7RhF2PZshoS_RcsRtLCGLv4hJ13uNVAyYPqkYOkL6-8l3-9fFIBj5qGZER85TV3j7-PY6rh633tso7j4IfcAqTBPqoneAy4pn7kO5HMWrUOPiE0A",
         "ASPNETCORE_ENVIRONMENT": "Development"
       },
-      "applicationUrl": "http://localhost:5000"
+      "applicationUrl": "http://localhost:5003"
     },
     "ListSupporters": {
       "commandName": "Project",

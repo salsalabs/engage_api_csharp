@@ -79,8 +79,11 @@ public class ListSupporterApp
         }
         // List supporters since a date.
         EngageAPI.Supporter.SearchRequest searchRequest = new EngageAPI.Supporter.SearchRequest();
-        searchRequest.modifiedFrom = "2019-01-07T12:00:00.000Z";
-        searchRequest.offset = 0;
+
+        // Kludged for a client...
+        searchRequest.modifiedFrom = "2020-01-07T12:00:00.000Z";
+        searchRequest.offset = 1041;
+
         // TODO: fetch this count from a Metrics object.
         searchRequest.count = 20;
         var url = EngageAPI.Constants.APIHost + EngageAPI.Supporter.Constants.SearchEndpoint;
@@ -98,7 +101,10 @@ public class ListSupporterApp
                 string payload = JsonConvert.SerializeObject(requestPayload);
                 Console.WriteLine("request payload is {0}", payload);
                 string s = client.UploadString(url, EngageAPI.Constants.SearchMethod, payload);
-                //Console.WriteLine("Response:\n{0}\n", s);
+
+                // Kludged for a client...
+                Console.WriteLine("Response:\n{0}\n", s);
+
                 EngageAPI.Supporter.SearchResults results = JsonConvert.DeserializeObject<EngageAPI.Supporter.SearchResults>(s);
                 //app.ShowResults(results);
                 app.SummarizeResults(results);

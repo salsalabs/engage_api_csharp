@@ -19,7 +19,7 @@ namespace EngageAPI
             public const string TwitterID = "TWITTER_ID";
             public const string LinkedInID = "LINKEDIN_ID";
             public const string OptIn = "OPT_IN";
-            public const string OptIut = "OPT_OUT";
+            public const string OptOut = "OPT_OUT";
             public const string HardBounce = "HARD_BOUNCE";
         }
             //A contact for a supporter.

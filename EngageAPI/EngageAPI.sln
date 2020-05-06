@@ -7,8 +7,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ListDedications", "ListDedi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ListDonations", "ListDonations\ListDonations.csproj", "{AF5FBC1E-C481-4C42-A4D0-5598CE133E33}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ListSupporters", "ListSupporters\ListSupporters.csproj", "{89DEBF42-403F-41F9-8CDD-A500A2D33F50}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AddSupporter", "AddSupporter\AddSupporter.csproj", "{8C16BA44-7DE5-4562-9F4B-EB5D5D8C1C93}"
 EndProject
 Global
@@ -29,10 +27,6 @@ Global
 		{AF5FBC1E-C481-4C42-A4D0-5598CE133E33}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AF5FBC1E-C481-4C42-A4D0-5598CE133E33}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AF5FBC1E-C481-4C42-A4D0-5598CE133E33}.Release|Any CPU.Build.0 = Release|Any CPU
-		{89DEBF42-403F-41F9-8CDD-A500A2D33F50}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{89DEBF42-403F-41F9-8CDD-A500A2D33F50}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{89DEBF42-403F-41F9-8CDD-A500A2D33F50}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{89DEBF42-403F-41F9-8CDD-A500A2D33F50}.Release|Any CPU.Build.0 = Release|Any CPU
 		{8C16BA44-7DE5-4562-9F4B-EB5D5D8C1C93}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{8C16BA44-7DE5-4562-9F4B-EB5D5D8C1C93}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8C16BA44-7DE5-4562-9F4B-EB5D5D8C1C93}.Release|Any CPU.ActiveCfg = Release|Any CPU
