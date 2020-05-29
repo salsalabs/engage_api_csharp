@@ -46,7 +46,11 @@ public class AddSupporterApp
             {
                 foreach (EngageAPI.Supporter.Contact c in s.contacts)
                 {
-                    Console.WriteLine("Contact:      {0} {1}", c.type, c.value);
+                    Console.WriteLine("Contact:      {0} {1} {2} {3}", c.type, c.value, c.status, c.optInDate);
+                    if (c.type == EngageAPI.Supporter.Constants.CellPhone)
+                    {
+                        Console.WriteLine("SMS:          status: {0}, statusDetail: {0}", c.smsStatus, c.smsStatusDetail);
+                    }
                 }
             }
             if (s.customFieldValues!= null && s.customFieldValues.Length != 0)
@@ -84,6 +88,7 @@ public class AddSupporterApp
         supporter.firstName = firstName;
         supporter.lastName = lastName;
 
+        // Email address.
         EngageAPI.Supporter.Contact contact = new EngageAPI.Supporter.Contact();
         contact.type = EngageAPI.Supporter.Constants.Email;
         contact.value = email;
@@ -91,6 +96,14 @@ public class AddSupporterApp
         supporter.contacts = new EngageAPI.Supporter.Contact[1];
         supporter.contacts[0] = contact;
 
+        // Cell phone
+        contact = new EngageAPI.Supporter.Contact();
+        contact.type = EngageAPI.Supporter.Constants.CellPhone;
+        contact.value = "202.666.6666";
+        contact.status = EngageAPI.Supporter.Constants.OptIn;
+        contact.smsStatus = EngageAPI.Supporter.Constants.SmsOptIn;
+        Array.Resize(ref supporter.contacts, 2);
+        supporter.contacts[1] = contact;
         //supporter.address = new EngageAPI.Supporter.Address();
         //supporter.customFieldValues = new EngageAPI.Supporter.CustomFieldValue[0];
 

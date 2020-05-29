@@ -20,6 +20,8 @@ namespace EngageAPI
             public const string LinkedInID = "LINKEDIN_ID";
             public const string OptIn = "OPT_IN";
             public const string OptOut = "OPT_OUT";
+            public const string SmsOptIn = "OPT_IN";
+            public const string SmsOptOut = "OPT_OUT";
             public const string HardBounce = "HARD_BOUNCE";
         }
             //A contact for a supporter.
@@ -29,6 +31,9 @@ namespace EngageAPI
             public string value;
             public string status;
             public string optInDate;
+            public string smsStatus;
+            public string smsStatusDetail;
+            public string lastChangeReason;
         }
 
         //A custom fields.  Note that custom fields are allocated
@@ -85,11 +90,11 @@ namespace EngageAPI
             public Supporter[] supporters;
 
         }
-        //Request requests a search for supporters modified between
-        //'modifiedFrom' and 'modifiedTo'.
-        //Add variations later.
-        public struct SearchRequest
+        //ModifiedSearch Request requests a search for supporters modified
+        //between an start date and an optional end date.
+        public struct ModifiedSearchRequest
         {
+            public string identifierType;
             public string modifiedFrom;
             public string modifiedTo;
             public int offset;
@@ -97,9 +102,25 @@ namespace EngageAPI
         }
 
         //Payload for a supporter search request.
-        public struct SearchRequestPayload
+        public struct ModifiedSearchRequestPayload
         {
-            public SearchRequest payload;
+            public ModifiedSearchRequest payload;
+        }
+
+        //IDSearchRequest requests a search for supporters whose
+        //supporter IDs are provided as a list.
+        public struct IDSearchRequest
+        {
+            public string identifierType;
+            public string[] identifiers;
+            public int offset;
+            public int count;
+        }
+
+        //IDSearchRequestPayload wraps the search for supporters by ID.
+        public struct IDSearchRequestPayload
+        {
+            public IDSearchRequest payload;
         }
 
         // Wrapper around list of returned Supporters.

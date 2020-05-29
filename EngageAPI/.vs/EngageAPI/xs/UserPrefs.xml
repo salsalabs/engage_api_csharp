@@ -3,9 +3,11 @@
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
-          <Node name="EngageAPI" expanded="True" selected="True">
+          <Node name="EngageAPI" expanded="True">
             <Node name="AddSupporter" expanded="True" />
-            <Node name="EngageAPI" expanded="True" />
+            <Node name="EngageAPI" expanded="True">
+              <Node name="Supporter.cs" selected="True" />
+            </Node>
           </Node>
         </State>
       </Pad>
